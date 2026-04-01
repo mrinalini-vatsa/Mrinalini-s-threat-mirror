@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: threatmirror-backend
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    rootDir: backend
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: ABUSEIPDB_API_KEY
+        sync: false
+      - key: VIRUSTOTAL_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
