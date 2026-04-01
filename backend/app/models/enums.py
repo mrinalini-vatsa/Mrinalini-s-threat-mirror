@@ -17,5 +17,6 @@ class AlertStateType(str, enum.Enum):
 
 class DecisionType(str, enum.Enum):
     ignore = "IGNORE"
+    monitor = "MONITOR"
     escalate = "ESCALATE"
     block = "BLOCK"
